@@ -1,0 +1,7 @@
+RGBLIGHT_ENABLE = yes # Enables QMK's RGB code
+RGBLIGHT_EFFECT_SNAKE = yes
+RGBLIGHT_EFFECT_SNAKE = 0
+MOUSEKEY_ENABLE = yes
+# WS2812_DRIVER = vendor # Use the RP2040's PIO interface
+COMBO_ENABLE = yes
+
