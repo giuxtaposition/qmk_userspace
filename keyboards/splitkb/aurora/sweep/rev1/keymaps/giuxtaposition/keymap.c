@@ -30,17 +30,72 @@ enum layers {
 #define LAYER_V LT(_FUNC, KC_V)
 #define LAYER_K LT(_MEDIA, KC_K)
 
+enum unicode_names {
+    GRAVE_A_LOWER,
+    GRAVE_A_UPPER,
+    GRAVE_E_LOWER,
+    GRAVE_E_UPPER,
+    GRAVE_I_LOWER,
+    GRAVE_I_UPPER,
+    GRAVE_O_LOWER,
+    GRAVE_O_UPPER,
+    GRAVE_U_LOWER,
+    GRAVE_U_UPPER,
+    ACUTE_E_LOWER,
+    ACUTE_E_UPPER,
+};
+
+const uint32_t unicode_map[] PROGMEM = {
+    [GRAVE_A_LOWER]   = 0x00E0,  // à
+    [GRAVE_A_UPPER]   = 0x00C0,  // À
+    [GRAVE_E_LOWER]   = 0x00E8,  // è
+    [GRAVE_E_UPPER]   = 0x00C8,  // È
+    [GRAVE_I_LOWER]   = 0x00EC,  // ì
+    [GRAVE_I_UPPER]   = 0x00CC,  // Ì
+    [GRAVE_O_LOWER]   = 0x00F2,  // ò
+    [GRAVE_O_UPPER]   = 0x00D2,  // Ò
+    [GRAVE_U_LOWER]   = 0x00F9,  // ù
+    [GRAVE_U_UPPER]   = 0x00D9,  // Ù
+    [ACUTE_E_LOWER]   = 0x00E9,  // é
+    [ACUTE_E_UPPER]   = 0x00C9,  // É
+};
+
+#define GRAVE_A UP(GRAVE_A_LOWER, GRAVE_A_UPPER)
+#define GRAVE_E UP(GRAVE_E_LOWER, GRAVE_E_UPPER)
+#define GRAVE_I UP(GRAVE_I_LOWER, GRAVE_I_UPPER)
+#define GRAVE_O UP(GRAVE_O_LOWER, GRAVE_O_UPPER)
+#define GRAVE_U UP(GRAVE_U_LOWER, GRAVE_U_UPPER)
+#define ACUTE_E UP(ACUTE_E_LOWER, ACUTE_E_UPPER)
+
 enum combos {
     ESC_SPACE_TAB,
     ENT_BSPC_DEL,
+    A_G_GRAVE_A,
+    E_G_GRAVE_E,
+    I_G_GRAVE_I,
+    O_G_GRAVE_O,
+    U_G_GRAVE_U,
+    E_A_ACUTE_E,
 };
 
 const uint16_t PROGMEM esc_combo[] = {LAYER_ESC, LAYER_SPACE, COMBO_END};
 const uint16_t PROGMEM del_combo[] = {LAYER_ENT, LAYER_BSPC, COMBO_END};
+const uint16_t PROGMEM grave_a_combo[] = {HOME_A, KC_G, COMBO_END};
+const uint16_t PROGMEM grave_e_combo[] = {HOME_E, KC_G, COMBO_END};
+const uint16_t PROGMEM grave_i_combo[] = {HOME_I, KC_G, COMBO_END};
+const uint16_t PROGMEM grave_o_combo[] = {HOME_O, KC_G, COMBO_END};
+const uint16_t PROGMEM grave_u_combo[] = {KC_U, KC_G, COMBO_END};
+const uint16_t PROGMEM acute_e_combo[] = {HOME_E, HOME_A, COMBO_END};
 
 combo_t key_combos[] = {
     [ESC_SPACE_TAB] = COMBO(esc_combo, KC_TAB),
     [ENT_BSPC_DEL]  = COMBO(del_combo, KC_DEL),
+    [A_G_GRAVE_A]  = COMBO(grave_a_combo, GRAVE_A),
+    [E_G_GRAVE_E]  = COMBO(grave_e_combo, GRAVE_E),
+    [I_G_GRAVE_I]  = COMBO(grave_i_combo, GRAVE_I),
+    [O_G_GRAVE_O]  = COMBO(grave_o_combo, GRAVE_O),
+    [U_G_GRAVE_U]  = COMBO(grave_u_combo, GRAVE_U),
+    [E_A_ACUTE_E]  = COMBO(acute_e_combo, ACUTE_E),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
