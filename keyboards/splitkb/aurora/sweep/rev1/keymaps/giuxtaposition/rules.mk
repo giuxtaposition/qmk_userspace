@@ -1,15 +1,7 @@
-# Enables QMK's RGB code
-RGBLIGHT_ENABLE = yes
-RGBLIGHT_EFFECT_SNAKE = yes
-RGBLIGHT_EFFECT_SNAKE = 0
-
 MOUSEKEY_ENABLE = yes
-
 COMBO_ENABLE = yes
-
+TAP_DANCE_ENABLE = yes
 # Audio control and System control
 EXTRAKEY_ENABLE = yes
-
 KEY_OVERRIDE_ENABLE = yes
-
 UNICODEMAP_ENABLE = yes

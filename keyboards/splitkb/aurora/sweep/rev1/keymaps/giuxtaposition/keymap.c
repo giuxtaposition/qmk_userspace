@@ -21,6 +21,7 @@ enum layers {
     _NUMB,
     _MEDIA,
     _FUNC,
+    _GAME
 };
 
 #define LAYER_ESC LT(_MOUSE, KC_ESC)
@@ -76,6 +77,7 @@ enum combos {
     O_G_GRAVE_O,
     U_G_GRAVE_U,
     E_A_ACUTE_E,
+    GAME_MODE
 };
 
 const uint16_t PROGMEM esc_combo[] = {LAYER_ESC, LAYER_SPACE, COMBO_END};
@@ -86,6 +88,7 @@ const uint16_t PROGMEM grave_i_combo[] = {HOME_I, KC_G, COMBO_END};
 const uint16_t PROGMEM grave_o_combo[] = {HOME_O, KC_G, COMBO_END};
 const uint16_t PROGMEM grave_u_combo[] = {KC_U, KC_G, COMBO_END};
 const uint16_t PROGMEM acute_e_combo[] = {HOME_E, HOME_A, COMBO_END};
+const uint16_t PROGMEM toggle_gamemode[] = {KC_Q, KC_Z, COMBO_END};
 
 combo_t key_combos[] = {
     [ESC_SPACE_TAB] = COMBO(esc_combo, KC_TAB),
@@ -96,6 +99,18 @@ combo_t key_combos[] = {
     [O_G_GRAVE_O]  = COMBO(grave_o_combo, GRAVE_O),
     [U_G_GRAVE_U]  = COMBO(grave_u_combo, GRAVE_U),
     [E_A_ACUTE_E]  = COMBO(acute_e_combo, ACUTE_E),
+    [GAME_MODE]  = COMBO(toggle_gamemode, TG(_GAME)),
+};
+
+enum tap_dance {
+    TD_ESC_END,
+    TD_SPACE_TAB
+};
+
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_ESC_END] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_END),
+    [TD_SPACE_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_TAB),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -209,12 +224,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_TRNS ,                         KC_MPRV , KC_MNXT    , KC_KB_VOLUME_UP , KC_KB_VOLUME_DOWN , KC_PSCR,
   KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         KC_MPLY , KC_KB_MUTE , KC_TRNS         , KC_TRNS           , KC_TRNS,
                                           KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
+),
+
+//    ┌───┬───┬───┬──────┬────────────────┐                            ┌─────┬───┬───┬───┬───┐
+//    │ q │ w │ e │  r   │       t        │                            │  y  │ u │ i │ o │ p │
+//    ├───┼───┼───┼──────┼────────────────┤                            ├─────┼───┼───┼───┼───┤
+//    │ a │ s │ d │  f   │      lalt      │                            │  h  │ j │ k │ l │ ; │
+//    ├───┼───┼───┼──────┼────────────────┤                            ├─────┼───┼───┼───┼───┤
+//    │ z │ x │ c │ lctl │      lsft      │                            │  n  │ m │ , │ . │ / │
+//    └───┴───┴───┴──────┼────────────────┼──────────────────┐   ┌─────┼─────┼───┴───┴───┴───┘
+//                       │ TD(TD_ESC_END) │ TD(TD_SPACE_TAB) │   │ ent │     │
+//                       └────────────────┴──────────────────┘   └─────┴─────┘
+[_GAME] = LAYOUT_split_3x5_2(
+  KC_Q , KC_W , KC_E , KC_R    , KC_T           ,                                 KC_Y    , KC_U , KC_I    , KC_O   , KC_P   ,
+  KC_A , KC_S , KC_D , KC_F    , KC_LALT        ,                                 KC_H    , KC_J , KC_K    , KC_L   , KC_SCLN,
+  KC_Z , KC_X , KC_C , KC_LCTL , KC_LSFT        ,                                 KC_N    , KC_M , KC_COMM , KC_DOT , KC_SLSH,
+                                 TD(TD_ESC_END) , TD(TD_SPACE_TAB) ,     KC_ENT , KC_TRNS
 )
 };
-
-// Set rgb light
-void housekeeping_task_user(void) {
-    rgblight_setrgb(180, 159, 250);
-}
-
-
