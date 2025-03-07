@@ -9,7 +9,7 @@
 // Right-hand home row mods
 #define HOME_N RCTL_T(KC_N)
 #define HOME_E RSFT_T(KC_E)
-#define HOME_I LALT_T(KC_I)
+#define HOME_I RALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
 enum layers {
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                      └─────┴─────┘   └─────┴─────┘
 [_SYMB] = LAYOUT_split_3x5_2(
   KC_GRV  , KC_QUOT , KC_LT   , KC_GT   , KC_SCLN ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
-  KC_LCBR , KC_RCBR , KC_LPRN , KC_RPRN , KC_AT   ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_LALT , KC_RGUI,
+  KC_LCBR , KC_RCBR , KC_LPRN , KC_RPRN , KC_AT   ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_RALT , KC_RGUI,
   KC_TRNS , KC_EXLM , KC_LBRC , KC_RBRC , KC_TRNS ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_BSLS,
                                           KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
 ),
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                       └──────┴─────┘   └─────┴─────┘
 [_NUMB] = LAYOUT_split_3x5_2(
   KC_PSLS , KC_7 , KC_8 , KC_9 , KC_PPLS  ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
-  KC_0    , KC_4 , KC_5 , KC_6 , KC_MINUS ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_LALT , KC_RGUI,
+  KC_0    , KC_4 , KC_5 , KC_6 , KC_MINUS ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_RALT , KC_RGUI,
   KC_PAST , KC_1 , KC_2 , KC_3 , KC_EQL   ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
                                  KC_TRNS  , KC_TRNS ,     KC_TRNS , KC_TRNS
 ),
@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                         └─────┴─────┘   └─────┴─────┘
 [_FUNC] = LAYOUT_split_3x5_2(
   KC_TRNS , KC_F7 , KC_F8 , KC_F9 , KC_F10  ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
-  KC_TRNS , KC_F4 , KC_F5 , KC_F6 , KC_F11  ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_LALT , KC_RGUI,
+  KC_TRNS , KC_F4 , KC_F5 , KC_F6 , KC_F11  ,                         KC_TRNS , KC_RCTL , KC_RSFT , KC_RALT , KC_RGUI,
   KC_TRNS , KC_F1 , KC_F2 , KC_F3 , KC_F12  ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
                                     KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
 ),
