@@ -146,20 +146,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
 ),
 
-//    ┌──────┬──────┬──────┬──────┬─────┐                ┌──────┬──────┬──────┬──────┬─────┐
-//    │      │      │      │      │     │                │      │      │      │      │     │
-//    ├──────┼──────┼──────┼──────┼─────┤                ├──────┼──────┼──────┼──────┼─────┤
-//    │ lgui │ lalt │ lsft │ lctl │     │                │ ms_l │ ms_d │ ms_u │ ms_r │     │
-//    ├──────┼──────┼──────┼──────┼─────┤                ├──────┼──────┼──────┼──────┼─────┤
-//    │      │      │      │      │     │                │ wh_l │ wh_d │ wh_u │ wh_r │     │
-//    └──────┴──────┴──────┴──────┼─────┼─────┐   ┌──────┼──────┼──────┴──────┴──────┴─────┘
-//                                │     │     │   │ btn1 │ btn2 │
-//                                └─────┴─────┘   └──────┴──────┘
+//    ┌──────┬──────┬──────┬──────┬─────┐                   ┌─────────┬─────────┬─────────┬─────────┬─────┐
+//    │      │      │      │      │     │                   │         │         │         │         │     │
+//    ├──────┼──────┼──────┼──────┼─────┤                   ├─────────┼─────────┼─────────┼─────────┼─────┤
+//    │ lgui │ lalt │ lsft │ lctl │     │                   │ MS_LEFT │ MS_DOWN │  MS_UP  │ MS_RGHT │     │
+//    ├──────┼──────┼──────┼──────┼─────┤                   ├─────────┼─────────┼─────────┼─────────┼─────┤
+//    │      │      │      │      │     │                   │ MS_WHLL │ MS_WHLD │ MS_WHLU │ MS_WHLR │     │
+//    └──────┴──────┴──────┴──────┼─────┼─────┐   ┌─────────┼─────────┼─────────┴─────────┴─────────┴─────┘
+//                                │     │     │   │ MS_BTN1 │ MS_BTN2 │
+//                                └─────┴─────┘   └─────────┴─────────┘
 [_MOUSE] = LAYOUT_split_3x5_2(
   KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
-  KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_TRNS ,                         KC_MS_L , KC_MS_D , KC_MS_U , KC_MS_R , KC_TRNS,
-  KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         KC_WH_L , KC_WH_D , KC_WH_U , KC_WH_R , KC_TRNS,
-                                          KC_TRNS , KC_TRNS ,     KC_BTN1 , KC_BTN2
+  KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_TRNS ,                         MS_LEFT , MS_DOWN , MS_UP   , MS_RGHT , KC_TRNS,
+  KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         MS_WHLL , MS_WHLD , MS_WHLU , MS_WHLR , KC_TRNS,
+                                          KC_TRNS , KC_TRNS ,     MS_BTN1 , MS_BTN2
 ),
 
 //    ┌─────┬───┬───┬───┬─────┐               ┌─────┬──────┬──────┬──────┬──────┐
@@ -210,17 +210,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
 ),
 
-//    ┌──────┬──────┬──────┬──────┬─────┐               ┌─────────┬─────────┬──────────────┬────────────────┬─────────┐
-//    │      │      │      │      │     │               │ RGB_TOG │ RGB_MOD │   RGB_HUI    │    RGB_SAI     │ RGB_VAI │
-//    ├──────┼──────┼──────┼──────┼─────┤               ├─────────┼─────────┼──────────────┼────────────────┼─────────┤
-//    │ lgui │ lalt │ lsft │ lctl │     │               │  mprv   │  mnxt   │ kB_VOLUME_UP │ kB_VOLUME_DOWN │  pscr   │
-//    ├──────┼──────┼──────┼──────┼─────┤               ├─────────┼─────────┼──────────────┼────────────────┼─────────┤
-//    │      │      │      │      │     │               │  mply   │ kB_MUTE │              │                │         │
-//    └──────┴──────┴──────┴──────┼─────┼─────┐   ┌─────┼─────────┼─────────┴──────────────┴────────────────┴─────────┘
-//                                │     │     │   │     │         │
-//                                └─────┴─────┘   └─────┴─────────┘
+//    ┌──────┬──────┬──────┬──────┬─────┐               ┌──────┬─────────┬──────────────┬────────────────┬──────┐
+//    │      │      │      │      │     │               │      │         │              │                │      │
+//    ├──────┼──────┼──────┼──────┼─────┤               ├──────┼─────────┼──────────────┼────────────────┼──────┤
+//    │ lgui │ lalt │ lsft │ lctl │     │               │ mprv │  mnxt   │ kB_VOLUME_UP │ kB_VOLUME_DOWN │ pscr │
+//    ├──────┼──────┼──────┼──────┼─────┤               ├──────┼─────────┼──────────────┼────────────────┼──────┤
+//    │      │      │      │      │     │               │ mply │ kB_MUTE │              │                │      │
+//    └──────┴──────┴──────┴──────┼─────┼─────┐   ┌─────┼──────┼─────────┴──────────────┴────────────────┴──────┘
+//                                │     │     │   │     │      │
+//                                └─────┴─────┘   └─────┴──────┘
 [_MEDIA] = LAYOUT_split_3x5_2(
-  KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         RGB_TOG , RGB_MOD    , RGB_HUI         , RGB_SAI           , RGB_VAI,
+  KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         KC_TRNS , KC_TRNS    , KC_TRNS         , KC_TRNS           , KC_TRNS,
   KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_TRNS ,                         KC_MPRV , KC_MNXT    , KC_KB_VOLUME_UP , KC_KB_VOLUME_DOWN , KC_PSCR,
   KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,                         KC_MPLY , KC_KB_MUTE , KC_TRNS         , KC_TRNS           , KC_TRNS,
                                           KC_TRNS , KC_TRNS ,     KC_TRNS , KC_TRNS
