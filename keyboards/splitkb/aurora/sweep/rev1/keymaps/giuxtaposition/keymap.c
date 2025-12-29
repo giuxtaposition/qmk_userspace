@@ -10,7 +10,7 @@
 // Right-hand home row mods
 #define HOME_N RCTL_T(KC_N)
 #define HOME_E RSFT_T(KC_E)
-#define HOME_I LALT_T(KC_I)
+#define HOME_I RALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
 enum layers {
